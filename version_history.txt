@@ -1,0 +1,173 @@
+===============
+VERSION HISTORY
+===============
+
+Version 2.2.1
+=================================
+-Fixed issue where mixed action flag values used with consolidate lines can cause no emails to send (Issue #198)
+-Fixed unsafe yaml.load call (Issue #195)
+-Updated config workbook to use new projects_contents mapping table (Issue #203)
+-Fixed MyPDF2 library issue (Issue #205)
+=================================
+
+Version 2.2.0
+=================================
+-Refactor for Python 3 (Issue #111)
+-Fix SMS error handling (Issue #158)
+-Fix for test alerts breaking in 2020.4 (Issue #175)
+=================================
+
+Version 2.1.1
+=================================
+-Documentation updates (Issue #124)
+-Fixed problem where content references were unnecessarily processed (Issue #126)
+-Updated for 2019.1 compatibility (Issue #142)
+-Fixed issue where ad-hoc extract refreshes do not trigger alert execution (Issue #138)
+-Remove advertisement from install_guide (Issue #124)
+-Clarify Sort Order field behavior (Issue #141)
+-Update install_guide for TSM commands (Issue #139)
+=================================
+
+Version 2.1.0
+=================================
+-Implemented "smart default" behavior for Advanced Alerts (Issue #68)
+-Added custom scheduling to trigger alerts based on when the workbook extract refreshes (Issue #97)
+-Emails and SMS messages are now multithreaded within a single VizAlert (Issue #76)
+-Added a Starter sheet for building VizAlerts (Issue #96)
+-Updated to support the latest Twilio library (Issue #107)
+-Fixed the ability to point to a custom yaml configuration file (Issue #120)
+-Fixed issue with VizAlertsDemo SMS tests (Issue #105)
+-Fixed problem where links in VizAlerts did not use https when server was using SSL (Issue #100)
+-Moved Install Guide from .docx format to Markdown (Issue #79)
+-Documentation updates (Issues #112, #109, #106, #104, #102)
+-Update vizalerts.yaml file for Tableau Server running on non-standard ports (Issue #101)
+=================================
+
+Version 2.0.1
+=================================
+-Fixed issue where unlicensed users subscribed to Simple Alerts generate failure emails (Issue #88)
+-Fixed issue where VIZ_LINK content reference doesn't work if placed after other content references (Issue #83)
+-Improved error handling when subscriber to an Advanced Alert is not the owner (Issue #82)
+-Fixed issue where trailing commas in recipients lists cause a "missing field" error (Issue #61)
+-Fixed issue where locales defaulting to semicolon delimiters cannot use Advanced Alerts (Issue #17)
+-Added a few small notes to the VizAlertsConfig workbook (Issues #87,  #94)
+-Install guide clarifications and corrections (Issues #86, #85, #84)
+-User Guide clarifications and corrections (Issue #77)
+-Allow use of additional characters to break up list of recipient email addresses (Issue #92)
+-Added error handling for invalid regex expressions in configuration viz (Issue #90)
+-Fixed issue where Case should be ignored in email address regex pattern comparisons (Issue #93)
+=================================
+
+Version 2.0.0
+=================================
+-Added support for SMS messages through Twilio (Issue #57)
+-Added multi-threading to improve alert timeliness (Issue #7)
+-Configuration settings are now primarily derived from a Tableau Server view rather than config/vizalerts.yaml (Issue #41)
+-Field naming convention is now more flexible (Issue #12)
+-Fixed defect where SSL certificate was not being validated
+-Added config options around SSL certificate validation
+-Improved error handling
+-Improved alert test timeliness
+-Restructured code for more modularity and for future features
+=================================
+
+Version 1.1.1
+=================================
+-Minor tweaks for Tableau Server 10.0 (Issue #43)
+-Minor documentation updates (Issue #42)
+=================================
+
+Version 1.1.0
+=================================
+-Added VIZ_CSV() and VIZ_PDF() content reference for appended (non-inline) CSV and PDF attachments using Email Attachment ~ field (Issue #11)
+-Support for custom view references in content references e.g. myViz/myView (Issue #6)
+-URL parameter support for custom view references e.g. myViz/myView?Region=East (Issue #6)
+-Support for custom hyperlinks to views with VIZ_LINK() content reference
+-Merged PDF support with |mergpdf option in content references via integration with PyPDF2 
+-Custom filenames for appended attachments with |filename option
+-Enabled user-defined sort for consolidated emails using Email Sort Order ~ field
+-Inline images can be hyperlinks with |vizlink option
+-Now including demo\ folder with VizAlertsDemo.twb that includes a number of scenarios for both demo & test purposes
+-Documentation for all of the above
+-Removed edge condition where consolidated emails would not consolidate.
+-Added initial code for support of TWB/TWBX downloads
+-Added initial code for support of export to local filesystem
+-VizAlerts.tdsx moved to demo\ folder
+-Added config option for SMTP server port (Issue #15)
+-Added config option to ignore certificate check for SSL (Issue #5)
+-Fixed issue with trusted ticket failures error handling (Issue #4)
+-Fixed issue with default config values for timeouts and retries not applying as expected (Issue #2)
+-Fixed issue with alert tests using a 30s timeout rather than the correct value (Issue #3)
+-Fixed issue with alerts being processed for unlicesed users (Issue #13)
+-Fixed issue with file cleanup failures halting all alert processing (Issue #16)
+=================================
+
+Version 1.0.8
+=================================
+-Documentation improvements
+-Confusing copyright restrictions removed, LICENSE file contains license for all files
+-Default configuration values altered to simplify testing
+=================================
+
+Version 1.0.7
+=================================
+-Fixed a regression in which caused alerts to fail on Tableau Server instances using local authentication
+=================================
+
+Version 1.0.6
+=================================
+-By default, Subscribers of alerts that fail for any reason will be notified via email (can be disabled in config)
+-Failure emails are improved, with additional details added
+-Advanced Alerts can now override the default VizAlerts footer
+=================================
+
+Version 1.0.5
+=================================
+-Fixed bug with handling HTTP errors during data exports: "'NoneType' object has no attribute 'status_code'"
+-Fixed formatting bug with HTTP errors being reported in emails
+-Fixed issue with viz.data.retrieval_tries setting in vizalerts.yaml file not working
+-Fixed bug where Site support breaks if the site's Name differs from the ID
+-Fixed bug where Subscribing to a view on a Site having a duplicate version on a separate Site causes logs and state file to rapidly increase in size.
+-Added ability for Alert owners to manually trigger them on a one-off basis without scheduling
+-Fixed the Title heading in the User Guide
+=================================
+
+Version 1.0.4
+=================================
+-Added support for Unicode
+-Removed need to add comment to Advanced Alert views
+-Improved Advanced Alert efficiency by rendering viz image only if needed
+-Fixed bug in Advanced Alerts where duplicate alerts would be sent if "duplicate" rows were present in exported view data
+-"Force refresh" logic now determined by query in vizalerts.yaml (no change in functionality, just adds flexibility for future changes)
+-A few improvements in error handling
+=================================
+
+Version 1.0.3
+=================================
+-Fixed bug where To addresses are not validated
+-Fixed bug where Advanced alerts with lines over 1000 characters are truncated
+-Added max length check for Advanced Alert addresses
+-Improved some error handling
+=================================
+
+Version 1.0.2
+=================================
+-Fixed bug where CC and BCC addresses never have email sent to them for Advanced Alerts
+-Fixed bug where Advanced alerts with email consolidation behave unpredictably due to unsorted CSV export
+-Advanced alerts are now atomic, e.g., all emails will be sent, or none will if an issue is found
+-Added offline installation instructions for Python packages to install guide
+=================================
+
+Version 1.0.1
+=================================
+-Users from multiple domains now supported
+-Servers using Local Authentication now supported
+-Fixed bug with subscription footers
+-Improved error handling and reporting
+-Passwords can now be specified as filepaths rather than plaintext in vizalerts.yaml
+-Clarified expected formats for several config values
+=================================
+
+Version 1.0.0
+=================================
+=================================
