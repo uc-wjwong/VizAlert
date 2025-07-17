@@ -10,23 +10,17 @@ Actions currently supported are:
 
 Once VizAlerts is installed and running, all of the work to build and manage your alerts happens in Tableau--no scripting required, and no separate interface necessary.
 
-## Got any documentation?
+## Documentation
 
-Do we ever! There are two files included in the \docs folder, [install_guide.md](docs/install_guide.md) and [user_guide.md](docs/user_guide.md), intended for Tableau Server administrators and for alert authors, respectively. They're the best way to learn about what VizAlerts can do.
+There are two files included in the \docs folder, [install_guide.md](docs/install_guide.md) and [user_guide.md](docs/user_guide.md), intended for Tableau Server administrators and for alert authors, respectively. They're the best way to learn about what VizAlerts can do.
 
-If you're an impatient Millennial like me, here's a [video](https://youtu.be/NQW3w64cXiU) that skims the very basics.
-
-## How do I set it up?
+## Setup
 
 Please see the [Install Guide](docs/install_guide.md) for installation instructions. Only the Tableau Server administrator needs to set it up. Once working, any user on Tableau Server who can publish may use VizAlerts.
 
-## What versions of Tableau are supported?
+## Versions of Tableau support
 
 Tableau Server version 8.2.5 and higher is required (ideally version 9--if you're using version 8, some things won't work as well). Tableau Online is not currently supported, though we are looking at ways we might be able to achieve that.
-
-## How is it licensed?
-
-Please see the LICENSE file in the root path for details.
 
 ## Is VizAlerts supported?
 
