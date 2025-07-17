@@ -1,0 +1,31 @@
+log.dir: "/unified/roaming/logs/vizalert/"
+log.dir.file_retention_seconds: 432000
+log.level: DEBUG
+schedule.state.dir: "./ops/"
+temp.dir: "/unified/roaming/extapps/vizalert/temp/"
+temp.dir.file_retention_seconds: 86400
+smtp.serv: 10.202.1.239
+smtp.port: 25 
+smtp.address.from: vhe.tableau@celcomdigi.com 
+smtp.address.to: 
+smtp.subject: "ALERT: VizAlerts failed to execute properly"
+smtp.ssl: true
+smtp.user: 
+smtp.password: 
+server: 10.244.138.8
+server.version: 10
+server.user: admin
+server.user.domain: null
+vizalerts.source.viz: 'VizAlertsConfig/ScheduledTriggerViews'
+vizalerts.source.site: 'Default'
+server.ssl: false
+server.certcheck: false
+server.certfile: null
+trusted.useclientip: false
+trusted.clientip: null
+smsaction.enable: false
+smsaction.provider: twilio
+smsaction.account_id: ''
+smsaction.auth_token: ''
+threads: 2
+data.coldelimiter: ','
