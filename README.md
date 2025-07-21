@@ -18,6 +18,8 @@ There are two files included in the \docs folder, [install_guide.md](docs/instal
 
 Please see the [Install Guide](docs/install_guide.md) for installation instructions. Only the Tableau Server administrator needs to set it up. Once working, any user on Tableau Server who can publish may use VizAlerts.
 
+Or see the [UC.PSD.HadoopEcosystem.InstallGuide.V2.R4.docx] (still updating, not available in SVN yet).
+
 ## Versions of Tableau support
 
 Tableau Server version 8.2.5 and higher is required (ideally version 9--if you're using version 8, some things won't work as well). Tableau Online is not currently supported, though we are looking at ways we might be able to achieve that.
