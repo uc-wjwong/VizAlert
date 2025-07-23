@@ -817,7 +817,7 @@ class VizAlert(object):
             log.logger.debug('Got trigger data, now comparing previous triggered data for preventing duplicate alerts')
             temp_dir = config.configs['temp.dir']
             kpi_files = sorted(
-                glob.glob(os.path.join(temp_dir, '*_KPIAlert_*.csv')),
+                glob.glob(os.path.join(temp_dir, '*_KPIAlert-*.csv')),
                 key=os.path.getmtime,
                 reverse=True
             )
